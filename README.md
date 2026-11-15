@@ -69,11 +69,38 @@ app.py            →  Streamlit dashboard
 
 ## Run it yourself
 
+### 1 — Generate the data (Python, one-time)
+
 ```bash
 pip install -r requirements.txt
-python generate_data.py   # simulated mission
-python model.py           # ML + self-check
-python donki.py           # real NASA space weather (no API key needed)
+python generate_data.py   # simulated 180-day mission
+python model.py           # ML baselines, anomaly flags, risk scores
+python donki.py           # real NASA DONKI space-weather events
+```
+
+### 2 — Next.js web dashboard (recommended)
+
+> Requires Node.js 18+
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Open **http://localhost:3000** in your browser.
+
+For production:
+
+```bash
+cd frontend
+npm run build
+npm start
+```
+
+### 3 — Streamlit dashboard (original)
+
+```bash
 streamlit run app.py
 ```
 
